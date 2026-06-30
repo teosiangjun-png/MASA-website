@@ -7,29 +7,30 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #e0e0e0; /* Light gray text for dark mode */
+    color: #444444; 
     line-height: 1.8;
-    background-color: #121212; /* Deep dark background */
+    background-color: #ffffff; 
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #ffffff; /* Crisp white headers */
+    color: #222222; 
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* Navigation - Dark Mode */
+/* --- NAVIGATION & HEADER --- */
 header {
-    background-color: #1a1a1a;
+    background-color: transparent; 
     position: fixed;
+    top: 0;    
+    left: 0;   
     width: 100%;
     z-index: 100;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.5); /* Stronger shadow */
-    border-bottom: 1px solid #333;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 nav {
@@ -37,16 +38,40 @@ nav {
     justify-content: space-between;
     align-items: center;
     min-height: 10vh;
-    width: 85%;
+    width: 90%; 
+    max-width: 1400px; 
     margin: auto;
 }
 
+/* Scrolled State Triggered by JavaScript */
+header.scrolled {
+    background-color: #ffffff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+}
+
+header.scrolled .logo {
+    color: #222222; 
+}
+
+header.scrolled .nav-links a {
+    color: #555555; 
+}
+
+header.scrolled .nav-links a:hover {
+    color: #ce1126; 
+}
+
+header.scrolled .burger-menu div {
+    background-color: #222222; 
+}
+
 .logo {
-    color: #ffffff;
+    color: #ffffff; 
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.5rem;
+    transition: color 0.4s ease;
 }
 
 .nav-links {
@@ -60,16 +85,16 @@ nav {
 }
 
 .nav-links a {
-    color: #cccccc;
+    color: #ffffff; 
     text-decoration: none;
     letter-spacing: 1px;
     font-size: 0.85rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    transition: color 0.4s ease;
 }
 
 .nav-links a:hover {
-    color: #ce1126; 
+    color: #fcd116; 
 }
 
 /* Burger Menu */
@@ -81,12 +106,12 @@ nav {
 .burger-menu div {
     width: 25px;
     height: 3px;
-    background-color: #e0e0e0;
+    background-color: #ffffff; 
     margin: 5px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
     height: 100vh;
     position: relative;
@@ -94,7 +119,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #111;
+    background-color: #f4f4f4;
     overflow: hidden;
 }
 
@@ -102,7 +127,7 @@ nav {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('image_cd7239.jpg'); 
+    background-image: url('photo-1596422846543-75c6fc197f07.avif'); 
     background-size: cover;
     background-position: center top; 
     background-attachment: fixed;
@@ -113,7 +138,7 @@ nav {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('singapore-photo.jpg'); 
+    background-image: url('yoav-aziz-ki0hTNFQjek-unsplash.jpg'); 
     background-size: cover;
     background-position: center bottom; 
     background-attachment: fixed;
@@ -133,7 +158,13 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Darker overlay for better contrast */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,   
+        rgba(0, 0, 0, 0.6) 20%,   
+        rgba(0, 0, 0, 0.6) 80%,   
+        rgba(255, 255, 255, 1) 100% 
+    );
     z-index: 1;
 }
 
@@ -145,7 +176,7 @@ nav {
 
 .hero-content h1 {
     font-size: 4rem;
-    color: #ffffff;
+    color: #ffffff; 
     letter-spacing: 1px;
     margin-bottom: 10px;
     text-shadow: 0 4px 10px rgba(0,0,0,0.8);
@@ -159,13 +190,13 @@ nav {
     letter-spacing: 2px;
 }
 
-/* Section Shared Styles */
+/* --- SECTION SHARED STYLES --- */
 .section-container {
     padding: 100px 10%;
 }
 
 .bg-dark-secondary {
-    background-color: #1a1a1a; 
+    background-color: #f9f9f9; 
 }
 
 .section-header {
@@ -175,7 +206,7 @@ nav {
 
 .section-header h2 {
     font-size: 2.2rem;
-    color: #ffffff;
+    color: #222222;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -189,7 +220,7 @@ nav {
 
 .section-text {
     font-size: 1.15rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -198,7 +229,7 @@ nav {
     text-align: center;
 }
 
-/* Grid Layouts for Pillars */
+/* --- PILLARS GRID --- */
 .grid-container {
     display: flex;
     justify-content: center;
@@ -209,11 +240,11 @@ nav {
 }
 
 .grid-item {
-    background: #222222; /* Dark card background */
+    background: #ffffff; 
     padding: 50px 40px;
     width: calc(33.333% - 20px);
     min-width: 300px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     border-top: 5px solid #ce1126;
     border-radius: 8px;
     text-align: center;
@@ -227,15 +258,15 @@ nav {
 .grid-item h3 {
     margin-bottom: 20px;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #222222;
 }
 
 .grid-item p {
     font-size: 1rem;
-    color: #b3b3b3;
+    color: #666666;
 }
 
-/* Team Section */
+/* --- TEAM SECTION --- */
 .team-grid {
     display: flex;
     justify-content: center;
@@ -246,26 +277,26 @@ nav {
 }
 
 .team-card {
-    background: #1e1e1e;
+    background: #ffffff;
     width: calc(33.333% - 27px);
     min-width: 320px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid #333; /* Subtle border for definition */
+    border: 1px solid #eaeaea; 
 }
 
 .team-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    border-color: #555;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: #cccccc;
 }
 
 .team-img-wrapper {
     width: 100%;
     height: 250px;
-    background-color: #111; 
+    background-color: #eeeeee; 
     overflow: hidden;
 }
 
@@ -308,22 +339,22 @@ nav {
 
 .team-info h3 {
     font-size: 1.6rem;
-    color: #ffffff;
+    color: #222222;
     margin-bottom: 15px;
 }
 
 .team-info p {
     font-size: 0.95rem;
-    color: #b3b3b3;
+    color: #666666;
     line-height: 1.7;
 }
 
-/* Impact Section */
+/* --- IMPACT SECTION --- */
 .impact-section {
-    background-color: #0f131a; 
+    background-color: #f4f4f4; 
     text-align: center;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .stats-container {
@@ -340,30 +371,30 @@ nav {
 
 .stat-box h3 {
     font-size: 4rem;
-    color: #fbd043;
+    color: #ce1126; 
     margin-bottom: 5px;
     line-height: 1;
 }
 
 .stat-box p {
-    color: #ffffff;
+    color: #333333;
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Contact Section */
+/* --- CONTACT SECTION --- */
 .contact-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    background: #1e1e1e;
+    background: #ffffff;
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #eaeaea;
 }
 
 .contact-info, .contact-form {
@@ -373,14 +404,14 @@ nav {
 
 .contact-info h3, .contact-form h3 {
     margin-bottom: 25px;
-    color: #ffffff;
+    color: #222222;
     font-size: 1.5rem;
 }
 
 .contact-info p {
     margin-bottom: 20px;
     font-size: 1.05rem;
-    color: #cccccc;
+    color: #555555;
 }
 
 .contact-info a {
@@ -391,7 +422,7 @@ nav {
 }
 
 .contact-info a:hover {
-    color: #fbd043;
+    color: #a30e1e;
 }
 
 /* Form Styling */
@@ -404,23 +435,23 @@ nav {
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #444;
+    border: 1px solid #cccccc;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    background: #121212;
-    color: #ffffff;
+    background: #fdfdfd;
+    color: #333333;
     transition: all 0.3s ease;
 }
 
 .contact-form input::placeholder, .contact-form textarea::placeholder {
-    color: #777;
+    color: #888888;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
     border-color: #ce1126;
-    box-shadow: 0 0 8px rgba(206, 17, 38, 0.4);
+    box-shadow: 0 0 8px rgba(206, 17, 38, 0.2);
 }
 
 .btn-primary {
@@ -443,21 +474,22 @@ nav {
 
 .btn-primary:hover {
     background-color: #a30e1e;
-    box-shadow: 0 5px 15px rgba(206, 17, 38, 0.5);
+    box-shadow: 0 5px 15px rgba(206, 17, 38, 0.3);
 }
 
-/* Comprehensive Footer */
+/* --- FOOTER --- */
 footer {
-    background-color: #0a0c10; /* Very dark for the bottom */
-    color: #888;
+    background-color: #ffffff; 
+    color: #555555;
     padding: 60px 10% 30px 10%;
+    border-top: 1px solid #eaeaea;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #eaeaea;
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
@@ -466,12 +498,12 @@ footer {
     font-size: 2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #fff;
+    color: #222222;
     letter-spacing: 2px;
 }
 
 .footer-socials a {
-    color: #ccc;
+    color: #555555;
     text-decoration: none;
     margin-left: 25px;
     font-size: 0.95rem;
@@ -487,18 +519,18 @@ footer {
     line-height: 1.7;
     margin-bottom: 15px;
     text-align: justify;
-    color: #666;
+    color: #777777;
 }
 
 .copyright {
     text-align: center;
     margin-top: 30px;
-    border-top: 1px solid #222;
+    border-top: 1px solid #eaeaea;
     padding-top: 20px;
-    color: #444 !important;
+    color: #999999 !important;
 }
 
-/* Mobile Responsiveness */
+/* --- MOBILE RESPONSIVENESS --- */
 @media screen and (max-width: 950px) {
     .grid-item {
         width: 100%;
@@ -514,7 +546,7 @@ footer {
         right: 0px;
         height: 90vh;
         top: 10vh;
-        background-color: #1a1a1a;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -522,7 +554,8 @@ footer {
         width: 100%;
         transform: translateX(100%);
         transition: transform 0.4s ease-in-out;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.05);
+        border-left: 1px solid #eaeaea;
     }
 
     .nav-links li {
@@ -556,7 +589,7 @@ footer {
     
     .contact-info {
         margin-bottom: 40px;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #eaeaea;
         padding-bottom: 30px;
     }
 

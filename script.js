@@ -44,3 +44,16 @@ const runCounters = () => {
 // Initialize functions
 navSlide();
 runCounters();
+
+// --- HEADER SCROLL EFFECT ---
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    // If the user scrolls down more than 50 pixels, add the white background and black text
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        // If they scroll back to the very top, make it transparent and white again
+        header.classList.remove('scrolled');
+    }
+});
