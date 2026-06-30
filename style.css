@@ -1,4 +1,4 @@
-
+/* Base Rest & Typography */
 * {
     margin: 0;
     padding: 0;
@@ -7,29 +7,29 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #cccccc; 
+    color: #e0e0e0; /* Light gray text for dark mode */
     line-height: 1.8;
-    background-color: #000000; 
+    background-color: #121212; /* Deep dark background */
 }
 
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #fcd116; 
+    color: #ffffff; /* Crisp white headers */
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-
+/* Navigation - Dark Mode */
 header {
-    background-color: #000000;
+    background-color: #1a1a1a;
     position: fixed;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 4px 20px rgba(206, 17, 38, 0.2); 
-    border-bottom: 2px solid #ce1126; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.5); /* Stronger shadow */
+    border-bottom: 1px solid #333;
 }
 
 nav {
@@ -42,7 +42,7 @@ nav {
 }
 
 .logo {
-    color: #fcd116;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
@@ -60,11 +60,11 @@ nav {
 }
 
 .nav-links a {
-    color: #fcd116; 
+    color: #cccccc;
     text-decoration: none;
     letter-spacing: 1px;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
@@ -81,12 +81,12 @@ nav {
 .burger-menu div {
     width: 25px;
     height: 3px;
-    background-color: #fcd116;
+    background-color: #e0e0e0;
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-
+/* Hero Section */
 .hero {
     height: 100vh;
     position: relative;
@@ -94,7 +94,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #000000;
+    background-color: #111;
     overflow: hidden;
 }
 
@@ -133,14 +133,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,   
-        rgba(0, 0, 0, 0.7) 15%,   
-        rgba(0, 0, 0, 0.7) 85%,   
-        rgba(0, 0, 0, 1) 100%  
-    );
+    background: rgba(0, 0, 0, 0.75); /* Darker overlay for better contrast */
     z-index: 1;
 }
 
@@ -152,28 +145,27 @@ nav {
 
 .hero-content h1 {
     font-size: 4rem;
-    color: #fcd116;
+    color: #ffffff;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.9);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
 }
 
 .hero-content .subtitle {
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #ce1126; 
+    font-weight: 400;
+    color: #fbd043; 
     letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
-
+/* Section Shared Styles */
 .section-container {
     padding: 100px 10%;
 }
 
 .bg-dark-secondary {
-    background-color: #002b7f; 
+    background-color: #1a1a1a; 
 }
 
 .section-header {
@@ -183,7 +175,7 @@ nav {
 
 .section-header h2 {
     font-size: 2.2rem;
-    color: #fcd116;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -191,7 +183,7 @@ nav {
 .divider {
     width: 60px;
     height: 4px;
-    background-color: #ce1126; 
+    background-color: #ce1126;
     margin: 15px auto 0 auto;
 }
 
@@ -206,7 +198,7 @@ nav {
     text-align: center;
 }
 
-
+/* Grid Layouts for Pillars */
 .grid-container {
     display: flex;
     justify-content: center;
@@ -217,12 +209,12 @@ nav {
 }
 
 .grid-item {
-    background: #000000; 
+    background: #222222; /* Dark card background */
     padding: 50px 40px;
     width: calc(33.333% - 20px);
     min-width: 300px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border-top: 5px solid #fcd116; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 5px solid #ce1126;
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease;
@@ -230,15 +222,20 @@ nav {
 
 .grid-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(206, 17, 38, 0.4);
 }
 
 .grid-item h3 {
     margin-bottom: 20px;
     font-size: 1.4rem;
+    color: #ffffff;
 }
 
+.grid-item p {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
 
+/* Team Section */
 .team-grid {
     display: flex;
     justify-content: center;
@@ -249,26 +246,26 @@ nav {
 }
 
 .team-card {
-    background: #000000;
+    background: #1e1e1e;
     width: calc(33.333% - 27px);
     min-width: 320px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 40, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid #002b7f; 
+    border: 1px solid #333; /* Subtle border for definition */
 }
 
 .team-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(252, 209, 22, 0.15);
-    border-color: #fcd116;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border-color: #555;
 }
 
 .team-img-wrapper {
     width: 100%;
     height: 250px;
-    background-color: #000000; 
+    background-color: #111; 
     overflow: hidden;
 }
 
@@ -290,41 +287,43 @@ nav {
     position: relative; 
 }
 
-
+/* Floating Pill Badge */
 .role-badge {
     position: absolute;
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: #fcd116; 
-    color: #000000; 
+    background: linear-gradient(135deg, #ce1126, #a30e1e);
+    color: white;
     padding: 8px 24px;
     border-radius: 30px;
     font-size: 0.85rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    box-shadow: 0 4px 15px rgba(252, 209, 22, 0.4);
+    box-shadow: 0 4px 15px rgba(206, 17, 38, 0.4);
     white-space: nowrap;
 }
 
 .team-info h3 {
     font-size: 1.6rem;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
 .team-info p {
     font-size: 0.95rem;
+    color: #b3b3b3;
     line-height: 1.7;
 }
 
-
+/* Impact Section */
 .impact-section {
-    background-color: #000000; 
+    background-color: #0f131a; 
     text-align: center;
-    border-top: 2px solid #002b7f;
-    border-bottom: 2px solid #002b7f;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
 }
 
 .stats-container {
@@ -341,31 +340,30 @@ nav {
 
 .stat-box h3 {
     font-size: 4rem;
-    color: #ce1126; 
+    color: #fbd043;
     margin-bottom: 5px;
     line-height: 1;
 }
 
 .stat-box p {
-    color: #fcd116; 
+    color: #ffffff;
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700;
 }
 
-
+/* Contact Section */
 .contact-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    background: #000000;
+    background: #1e1e1e;
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border: 1px solid #fcd116; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
 }
 
 .contact-info, .contact-form {
@@ -375,26 +373,28 @@ nav {
 
 .contact-info h3, .contact-form h3 {
     margin-bottom: 25px;
+    color: #ffffff;
     font-size: 1.5rem;
 }
 
 .contact-info p {
     margin-bottom: 20px;
     font-size: 1.05rem;
+    color: #cccccc;
 }
 
 .contact-info a {
-    color: #fcd116;
+    color: #ce1126;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #ce1126; 
+    color: #fbd043;
 }
 
-
+/* Form Styling */
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -404,23 +404,23 @@ nav {
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #002b7f;
+    border: 1px solid #444;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    background: #000000;
-    color: #fcd116;
+    background: #121212;
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
 .contact-form input::placeholder, .contact-form textarea::placeholder {
-    color: #666666;
+    color: #777;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
-    border-color: #fcd116;
-    box-shadow: 0 0 8px rgba(252, 209, 22, 0.4);
+    border-color: #ce1126;
+    box-shadow: 0 0 8px rgba(206, 17, 38, 0.4);
 }
 
 .btn-primary {
@@ -430,11 +430,11 @@ nav {
     width: 100%;
     text-align: center;
     padding: 16px 45px;
-    background-color: #ce1126; 
-    color: #000000; 
+    background-color: #ce1126;
+    color: #ffffff;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
@@ -442,23 +442,22 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: #fcd116; 
-    box-shadow: 0 5px 15px rgba(252, 209, 22, 0.5);
+    background-color: #a30e1e;
+    box-shadow: 0 5px 15px rgba(206, 17, 38, 0.5);
 }
 
-
+/* Comprehensive Footer */
 footer {
-    background-color: #000000; 
+    background-color: #0a0c10; /* Very dark for the bottom */
     color: #888;
     padding: 60px 10% 30px 10%;
-    border-top: 1px solid #333;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #222;
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
@@ -467,16 +466,15 @@ footer {
     font-size: 2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #fcd116; 
+    color: #fff;
     letter-spacing: 2px;
 }
 
 .footer-socials a {
-    color: #cccccc;
+    color: #ccc;
     text-decoration: none;
     margin-left: 25px;
     font-size: 0.95rem;
-    font-weight: 600;
     transition: color 0.3s ease;
 }
 
@@ -495,12 +493,12 @@ footer {
 .copyright {
     text-align: center;
     margin-top: 30px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
     padding-top: 20px;
     color: #444 !important;
 }
 
-
+/* Mobile Responsiveness */
 @media screen and (max-width: 950px) {
     .grid-item {
         width: 100%;
@@ -516,7 +514,7 @@ footer {
         right: 0px;
         height: 90vh;
         top: 10vh;
-        background-color: #000000;
+        background-color: #1a1a1a;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -524,7 +522,7 @@ footer {
         width: 100%;
         transform: translateX(100%);
         transition: transform 0.4s ease-in-out;
-        border-left: 2px solid #002b7f;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
     }
 
     .nav-links li {
